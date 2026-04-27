@@ -1,0 +1,90 @@
+/**
+ * @name ClearVision V7 - Rainbow Sparkle & Particles
+ * @author ClearVision Team & Gemini
+ * @version 7.0.7
+ * @description Comfortaa font, selective rainbow, and floating sparkle particles.
+ */
+
+/* IMPORT CSS */
+@import url("https://clearvision.github.io/ClearVision-v7/main.css");
+@import url("https://clearvision.github.io/ClearVision-v7/vencord.css");
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&display=swap');
+
+/* SETTINGS */
+:root {
+  --main-color: #00f2ff; 
+  --hover-color: #ffffff;
+  --background-image: url(https://i.postimg.cc/4NtPxmt1/N-s-Zekrom-Pokemon-Gallery-Collection.webp); 
+  --background-shading-percent: 85%; 
+  --main-font: "Comfortaa", cursive;
+}
+
+/* --- RAINBOW ANIMATION --- */
+@keyframes rainbowShift {
+  0% { filter: hue-rotate(0deg); }
+  100% { filter: hue-rotate(360deg); }
+}
+
+/* --- FLOATING PARTICLE EFFECT --- */
+@keyframes particleFloat {
+  0% { transform: translateY(0) translateX(0) rotate(0deg); opacity: 0; }
+  50% { opacity: 0.8; }
+  100% { transform: translateY(-100vh) translateX(20vw) rotate(360deg); opacity: 0; }
+}
+
+/* Creating "Particles" using a background overlay */
+#app-mount::before {
+    content: "✦";
+    position: absolute;
+    top: 100%;
+    left: 20%;
+    color: var(--main-color);
+    font-size: 20px;
+    animation: particleFloat 10s infinite linear;
+    z-index: 1;
+    pointer-events: none;
+    text-shadow: 0 0 10px var(--main-color);
+}
+
+#app-mount::after {
+    content: "✧";
+    position: absolute;
+    top: 100%;
+    left: 70%;
+    color: #fff;
+    font-size: 15px;
+    animation: particleFloat 7s infinite linear;
+    animation-delay: 2s;
+    z-index: 1;
+    pointer-events: none;
+    text-shadow: 0 0 15px var(--main-color);
+}
+
+/* --- SELECTIVE RAINBOW GLOW --- */
+.unread_d1405b, .mention_b441f0, .item_c4cd66 {
+    background-color: var(--main-color) !important;
+    animation: rainbowShift 4s linear infinite;
+    box-shadow: 0 0 15px var(--main-color);
+}
+
+.userPopoutOuter_c69a7b {
+    border: 2px solid var(--main-color) !important;
+    animation: rainbowShift 8s linear infinite;
+}
+
+/* --- CURSOR --- */
+* {
+    cursor: crosshair !important; /* Clean, precise cursor */
+}
+
+/* --- ADDITIONAL UI TWEAKS --- */
+.name_d8bfb3, .title_a7d737 {
+    text-shadow: 0 0 5px var(--main-color);
+}
+
+/* Button Hover Glow */
+.button_dd4f85:hover {
+    filter: drop-shadow(0 0 8px var(--main-color));
+    transform: scale(1.05);
+    transition: 0.2s;
+}
