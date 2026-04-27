@@ -1,0 +1,88 @@
+/**
+ * @name ClearVision V7 - Rainbow Sparkle Edition
+ * @author ClearVision Team & Gemini
+ * @version 7.0.4
+ * @description Rainbow shifting neon with sparkle cursor and cute fonts.
+ */
+
+/* IMPORT CSS */
+@import url("https://clearvision.github.io/ClearVision-v7/main.css");
+@import url("https://clearvision.github.io/ClearVision-v7/vencord.css");
+/* Import Comfortaa - A cute, rounded font */
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&display=swap');
+
+/* SETTINGS */
+:root {
+  /* INITIAL COLOR (This will be the base for the rainbow shift) */
+  --main-color: #00f2ff; 
+  --hover-color: #ffffff;
+  --success-color: #00ff95;
+  --danger-color: #ff007b;
+  
+  /* APP BACKGROUND */
+  --background-image: url(https://i.postimg.cc/4NtPxmt1/N-s-Zekrom-Pokemon-Gallery-Collection.webp); 
+  --background-shading-percent: 80%; 
+  --background-filter: contrast(1.1) brightness(0.8); 
+  
+  /* FONTS - Switched to Comfortaa for the "Cute" vibe */
+  --main-font: "Comfortaa", display;
+  --code-font: monospace;
+  
+  /* Indicators */
+  --channel-selected-bg: rgba(255, 255, 255, 0.2);
+}
+
+/* --- RAINBOW ANIMATION --- */
+@keyframes rainbowGlow {
+  0% { filter: hue-rotate(0deg); }
+  100% { filter: hue-rotate(360deg); }
+}
+
+/* Apply the Rainbow to basically everything neon */
+#app-mount {
+  animation: rainbowGlow 8s linear infinite;
+}
+
+/* --- ADDITIONAL CUSTOM CSS --- */
+
+/* Force extreme text glow */
+.name_d8bfb3, .title_a7d737 {
+    text-shadow: 0 0 10px white, 0 0 20px var(--main-color);
+    font-weight: 700;
+}
+
+/* Glowing Pulse for Unreads */
+.unread_d1405b {
+    box-shadow: 0 0 15px white, 0 0 30px var(--main-color) !important;
+}
+
+/* Sparkle/Cute Cursor */
+/* Using a public sparkle cursor asset */
+html, body, a, button {
+    cursor: url('https://cur.cursors-4u.net/symbols/sym-1/sym49.cur'), auto !important;
+}
+
+/* Make Popouts "Float" with more glow */
+.userPopoutOuter_c69a7b {
+    border: 2px solid white;
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.5) !important;
+}
+
+/* Button Sparkle Effect on Hover */
+.button_dd4f85:hover {
+    filter: brightness(1.2);
+    transform: scale(1.05) rotate(1deg);
+    transition: 0.2s;
+}
+
+/* Make scrollbar rainbow too */
+::-webkit-scrollbar-thumb {
+    background: white !important;
+    border: 2px solid var(--main-color);
+    box-shadow: 0 0 10px var(--main-color);
+}
+
+/* Small adjustments to make font look better */
+.primaryInfo_7cf80b {
+    letter-spacing: 0.5px;
+}
