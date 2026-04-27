@@ -2,7 +2,6 @@
  * @name ClearVision V7 - N: Truth and Ideals
  * @author ClearVision Team / Edited by Gemini
  * @version 7.0.1
- * @description A dual-tone theme based on N with Reshiram and Zekrom.
  */
 
 /* IMPORT CSS */
@@ -11,59 +10,36 @@
 
 /* SETTINGS */
 :root {
-  /* ACCENT COLORS - Sampled from Zekrom's scales and Reshiram's flames */
+  /* ACCENT COLORS */
   --main-color: #7d5bbe; /* Deep Dragon Violet */
-  --hover-color: #ff9a62; /* Sunset Cloud Orange */
+  --hover-color: #ff9a62; /* Sunset Orange */
   --success-color: #43b581; 
   --danger-color: #982929; 
   
-  /* STATUS COLORS */
-  --online-color: #89f5ff; /* Reshiram Cyan */
-  --idle-color: #faa61a; 
-  --dnd-color: #982929; 
-  --streaming-color: #593695; 
-  --offline-color: #808080; 
-
   /* APP BACKGROUND */
-  --background-shading-percent: 80%; 
-  /* Using the provided wide wallpaper link */
-  --background-image: url(https://i.redd.it/fzflmca1011f1.jpg); 
+  /* Updated to your new high-res direct link */
+  --background-image: url(https://i.postimg.cc/gJWH3r4Q/fzflmca1011f1.jpg); 
+  
+  /* TINT & CLARITY ADJUSTMENTS */
+  --background-shading-percent: 40%; /* Lowered from 80% to make it much brighter */
+  --background-filter: brightness(1) saturate(1); /* Set to default (no dark tint) */
+  
   --background-position: center; 
   --background-size: cover; 
   --background-attachment: fixed; 
-  --background-filter: contrast(1.1) brightness(0.9); 
   
-  /* USER POPOUT BACKGROUND */
+  /* USER UI */
   --user-popout-image: var(--background-image); 
-  --user-popout-position: 20% center; /* Focuses more on the Zekrom side for popouts */
-  --user-popout-filter: brightness(0.7); 
-  
-  /* USER MODAL BACKGROUND */
   --user-modal-image: var(--background-image); 
-  --user-modal-position: center; 
-  --user-modal-filter: brightness(0.6); 
   
-  /* HOME ICON */
-  --home-icon: url(https://clearvision.github.io/icons/discord.svg); 
-  --home-size: cover; 
-  
-  /* FONTS - Using a clean, heroic sans-serif */
+  /* FONTS */
   --main-font: "Inter", "Readex Pro", "gg sans", sans-serif; 
   --code-font: "JetBrains Mono", monospace; 
-  
-  /* CHANNEL COLORS */
-  --channel-selected-bg: var(--main-color); 
-  --channel-unread: var(--hover-color); 
 }
 
-/* ONYX THEME SHADING - Best for this dark-to-light transition image */
-:is(.theme-midnight, .theme-light .theme-midnight) {
-  --background-shading: rgba(20, 20, 35, 0.75); 
-  --card-shading: rgba(0, 0, 0, 0.4); 
-  --popout-shading: rgba(15, 15, 25, 0.9); 
-  --normal-text: #f0f0f5; 
-  --muted-text: #94949c; 
+/* THEME SHADING OVERRIDE - Removing the dark overlay */
+:is(.theme-midnight, .theme-dark, .theme-darker) {
+  --background-shading: rgba(0, 0, 0, 0.2); /* Very light transparency for readability */
+  --popout-shading: rgba(0, 0, 0, 0.6); 
+  --modal-shading: rgba(0, 0, 0, 0.5);
 }
-
-/* ADD ADDITIONAL CSS BELOW HERE */
-/* Custom scroll
