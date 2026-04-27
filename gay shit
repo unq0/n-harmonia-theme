@@ -1,0 +1,106 @@
+/**
+ * @name ClearVision V7 - Comfortaa Sparkle Swarm
+ * @author ClearVision Team
+ * @version 7.0.8
+ * @description Fixed cursor, Comfortaa font, and a swarm of floating sparkles.
+ */
+
+/* IMPORT CSS */
+@import url("https://clearvision.github.io/ClearVision-v7/main.css");
+@import url("https://clearvision.github.io/ClearVision-v7/vencord.css");
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&display=swap');
+
+/* SETTINGS */
+:root {
+  --main-color: #00f2ff; 
+  --hover-color: #ffffff;
+  --background-image: url(https://i.postimg.cc/4NtPxmt1/N-s-Zekrom-Pokemon-Gallery-Collection.webp); 
+  --background-shading-percent: 85%; 
+  --main-font: "Comfortaa", cursive;
+}
+
+/* --- RAINBOW ANIMATION --- */
+@keyframes rainbowShift {
+  0% { filter: hue-rotate(0deg); }
+  100% { filter: hue-rotate(360deg); }
+}
+
+/* --- SWARM PARTICLE EFFECT --- */
+@keyframes swarmFloat {
+  0% { transform: translateY(0) rotate(0deg); opacity: 0; }
+  20% { opacity: 0.8; }
+  80% { opacity: 0.8; }
+  100% { transform: translateY(-120vh) rotate(720deg); opacity: 0; }
+}
+
+/* Layer 1: Main Blue Sparkles */
+#app-mount::before {
+    content: "✦";
+    position: absolute;
+    bottom: -10%;
+    left: 15%;
+    color: var(--main-color);
+    font-size: 18px;
+    /* This creates 4 extra sparkles from one element */
+    text-shadow: 
+        40vw -20vh 10px var(--main-color), 
+        15vw -50vh 5px #fff, 
+        60vw -10vh 8px var(--main-color),
+        -10vw -40vh 12px #fff;
+    animation: swarmFloat 12s infinite linear;
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Layer 2: Faster White Sparkles */
+#app-mount::after {
+    content: "✧";
+    position: absolute;
+    bottom: -10%;
+    right: 20%;
+    color: #fff;
+    font-size: 12px;
+    /* This creates another 4 extra sparkles */
+    text-shadow: 
+        -30vw -30vh 8px var(--main-color), 
+        -50vw -60vh 10px #fff, 
+        10vw -20vh 5px var(--main-color),
+        -70vw -15vh 15px #fff;
+    animation: swarmFloat 8s infinite linear;
+    animation-delay: 3s;
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* --- SELECTIVE RAINBOW GLOW --- */
+.unread_d1405b, .mention_b441f0, .item_c4cd66 {
+    background-color: var(--main-color) !important;
+    animation: rainbowShift 4s linear infinite;
+    box-shadow: 0 0 15px var(--main-color);
+}
+
+.userPopoutOuter_c69a7b {
+    border: 2px solid var(--main-color) !important;
+    animation: rainbowShift 8s linear infinite;
+}
+
+/* --- CURSOR FIX --- */
+/* Back to browser default arrow */
+* {
+    cursor: default !important;
+}
+/* Ensure clickable things still show the pointer finger */
+a, button, [role="button"], .clickable_aa240c {
+    cursor: pointer !important;
+}
+
+/* --- UI TWEAKS --- */
+.name_d8bfb3, .title_a7d737 {
+    text-shadow: 0 0 5px var(--main-color);
+}
+
+.button_dd4f85:hover {
+    filter: drop-shadow(0 0 8px var(--main-color));
+    transform: scale(1.05);
+    transition: 0.2s;
+}
