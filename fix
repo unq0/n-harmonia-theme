@@ -1,0 +1,83 @@
+/**
+ * @name ClearVision V7 - Selective Rainbow Neon
+ * @author ClearVision Team & Gemini
+ * @version 7.0.5
+ * @description Selective rainbow glow on text and UI elements only.
+ */
+
+/* IMPORT CSS */
+@import url("https://clearvision.github.io/ClearVision-v7/main.css");
+@import url("https://clearvision.github.io/ClearVision-v7/vencord.css");
+/* Import Gaegu - A super cute, rounded hand-written font */
+@import url('https://fonts.googleapis.com/css2?family=Gaegu:wght@400;700&display=swap');
+
+/* SETTINGS */
+:root {
+  --main-color: #00f2ff; 
+  --hover-color: #ffffff;
+  
+  /* BACKGROUND - Kept stable and dark */
+  --background-image: url(https://i.postimg.cc/4NtPxmt1/N-s-Zekrom-Pokemon-Gallery-Collection.webp); 
+  --background-shading-percent: 85%; 
+  --background-filter: brightness(0.7) saturate(1.1); 
+  
+  /* FONT */
+  --main-font: "Gaegu", cursive;
+  --code-font: monospace;
+}
+
+/* --- RAINBOW KEYFRAMES --- */
+@keyframes textRainbow {
+  from { filter: hue-rotate(0deg); }
+  to { filter: hue-rotate(360deg); }
+}
+
+/* --- SELECTIVE GLOWING PARTS --- */
+
+/* 1. Rainbow Text Glow (Applied to Channel names and Headers) */
+.name_d8bfb3, .title_a7d737, .header_fd6364 {
+    color: white !important;
+    text-shadow: 0 0 8px var(--main-color), 0 0 12px var(--main-color);
+    animation: textRainbow 5s linear infinite;
+    font-weight: 700;
+}
+
+/* 2. Rainbow Unread Bars & Bubbles */
+.unread_d1405b, .item_c4cd66 {
+    background-color: var(--main-color) !important;
+    box-shadow: 0 0 15px var(--main-color);
+    animation: textRainbow 5s linear infinite;
+}
+
+/* 3. Glowing Rainbow Borders for Popouts/Modals */
+.userPopoutOuter_c69a7b, .modal_ed23b8, .inner_c69a7b {
+    border: 2px solid var(--main-color) !important;
+    box-shadow: 0 0 20px rgba(0, 242, 255, 0.4) !important;
+    animation: textRainbow 8s linear infinite;
+}
+
+/* 4. Glowing Rainbow Scrollbar */
+::-webkit-scrollbar-thumb {
+    background: var(--main-color) !important;
+    border-radius: 50px;
+    animation: textRainbow 5s linear infinite;
+}
+
+/* --- THE SPARKLE CURSOR --- */
+html, body, a, button {
+    cursor: url('https://cur.cursors-4u.net/symbols/sym-1/sym49.cur'), auto !important;
+}
+
+/* Interactive Hover Glow for Buttons */
+.button_dd4f85:hover {
+    filter: drop-shadow(0 0 10px var(--main-color));
+    transform: scale(1.05);
+    transition: 0.2s ease-in-out;
+}
+
+/* Make sure the text in the chat is readable but still cute */
+.markup_d6076d {
+    font-size: 1.1rem;
+    line-height: 1.3;
+    color: #e0faff;
+}
