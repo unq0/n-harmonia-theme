@@ -1,0 +1,85 @@
+/**
+ * @name ClearVision V7 Custom - Cosmic Cyan
+ * @author ClearVision Team / Edited by Gemini
+ * @version 7.0.1
+ * @description Highly customizable theme for Vencord.
+ * @source https://github.com/ClearVision/ClearVision-v7
+ * @website https://clearvision.github.io
+ * @invite dHaSxn3
+ */
+
+/* IMPORT CSS */
+@import url("https://clearvision.github.io/ClearVision-v7/main.css");
+@import url("https://clearvision.github.io/ClearVision-v7/vencord.css");
+
+/* SETTINGS */
+:root {
+  /* ACCENT COLORS */
+  /* Updated to match the cyan glow in the image */
+  --main-color: #00e5ff; 
+  --hover-color: #00acc1; 
+  --success-color: #43b581; 
+  --danger-color: #982929; 
+  
+  /* STATUS COLORS */
+  --online-color: #00e5ff; 
+  --idle-color: #faa61a; 
+  --dnd-color: #ff1744; 
+  --streaming-color: #593695; 
+  --offline-color: #808080; 
+
+  /* APP BACKGROUND */
+  --background-shading-percent: 100%; 
+  /* Using your provided link below */
+  --background-image: url(https://i.postimg.cc/Yq9wBSkv/IMG-7395.webp); 
+  --background-position: center; 
+  --background-size: cover; 
+  --background-attachment: fixed; 
+  --background-filter: saturate(1.2) brightness(0.9); 
+  
+  /* USER POPOUT BACKGROUND */
+  --user-popout-image: var(--background-image); 
+  --user-popout-position: var(--background-position); 
+  --user-popout-size: var(--background-size); 
+  --user-popout-attachment: var(--background-attachment); 
+  --user-popout-filter: var(--background-filter); 
+  
+  /* USER MODAL BACKGROUND */
+  --user-modal-image: var(--background-image); 
+  --user-modal-position: var(--background-position); 
+  --user-modal-size: var(--background-size); 
+  --user-modal-attachment: var(--background-attachment); 
+  --user-modal-filter: var(--background-filter); 
+  
+  /* HOME ICON */
+  --home-icon: url(https://clearvision.github.io/icons/discord.svg); 
+  --home-size: cover; 
+  
+  /* FONTS */
+  /* Switched to a cleaner geometric font often used in sci-fi themes */
+  --main-font: "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif; 
+  --code-font: "Fira Code", Consolas, monospace; 
+  
+  /* CHANNEL COLORS */
+  --channel-normal: var(--interactive-text-default); 
+  --channel-muted: var(--interactive-muted); 
+  --channel-hover: var(--interactive-text-hover); 
+  --channel-selected: var(--interactive-text-active); 
+  --channel-selected-bg: var(--main-color); 
+  --channel-unread: var(--main-color); 
+  --channel-unread-hover: var(--hover-color); 
+  
+  /* ACCESSIBILITY */
+  --focus-color: var(--main-color); 
+}
+
+/* THEME SPECIFIC SHADING - Set to Onyx for best space effect */
+:is(.theme-midnight, .theme-light .theme-midnight) {
+  --background-shading: rgba(0, 0, 0, 0.7); 
+  --card-shading: rgba(0, 0, 0, 0.4); 
+  --popout-shading: rgba(0, 0, 0, 0.8); 
+  --modal-shading: rgba(0, 0, 0, 0.6); 
+  --input-shading: rgba(255, 255, 255, 0.05); 
+  --normal-text: #e0f7fa; 
+  --muted-text: #86868e; 
+}
