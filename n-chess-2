@@ -1,0 +1,43 @@
+/**
+ * @name ClearVision V7 - Carbon Gold
+ * @author ClearVision Team / Edited by Gemini
+ * @version 7.0.1
+ */
+
+/* IMPORT CSS */
+@import url("https://clearvision.github.io/ClearVision-v7/main.css");
+@import url("https://clearvision.github.io/ClearVision-v7/vencord.css");
+
+/* SETTINGS */
+:root {
+  /* ACCENT COLORS - Luxury Gold */
+  --main-color: #d4af37; 
+  --hover-color: #f1c40f; 
+  --success-color: #2ecc71; 
+  --danger-color: #e74c3c; 
+  
+  /* STATUS COLORS */
+  --online-color: #d4af37; 
+  --idle-color: #faa61a; 
+  --dnd-color: #982929; 
+
+  /* APP BACKGROUND */
+  --background-image: url(https://i.postimg.cc/9F7K7m4z/D8n-MC5-PD.jpg); 
+  --background-shading-percent: 85%; 
+  --background-filter: contrast(1.1) brightness(0.8); 
+  
+  /* FONTS - Using "Triakis" style (Geometric & Futuristic) */
+  --main-font: "Inter", "Lexend", "Segoe UI", sans-serif;
+  --code-font: "JetBrains Mono", monospace;
+
+  /* USER UI */
+  --user-popout-image: var(--background-image);
+  --user-modal-image: var(--background-image);
+}
+
+/* ONYX THEME OVERRIDE */
+:is(.theme-midnight, .theme-light .theme-midnight) {
+  --background-shading: rgba(0, 0, 0, 0.85);
+  --normal-text: #f0f0f0;
+  --muted-text: #a0a0a0;
+}
