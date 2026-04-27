@@ -1,5 +1,5 @@
 /**
- * @name ClearVision V7 - N: Truth and Ideals
+ * @name ClearVision V7 - N Truth & Ideals
  * @author ClearVision Team / Edited by Gemini
  * @version 7.0.1
  */
@@ -17,12 +17,12 @@
   --danger-color: #982929; 
   
   /* APP BACKGROUND */
-  /* Updated to your new high-res direct link */
+  /* Direct GitHub Link */
   --background-image: url(https://i.postimg.cc/gJWH3r4Q/fzflmca1011f1.jpg); 
   
-  /* TINT & CLARITY ADJUSTMENTS */
-  --background-shading-percent: 40%; /* Lowered from 80% to make it much brighter */
-  --background-filter: brightness(1) saturate(1); /* Set to default (no dark tint) */
+  /* NO TINT SETTINGS */
+  --background-shading-percent: 0%; /* Set to 0 for maximum brightness */
+  --background-filter: none; /* Removed all filters/tinting */
   
   --background-position: center; 
   --background-size: cover; 
@@ -37,9 +37,14 @@
   --code-font: "JetBrains Mono", monospace; 
 }
 
-/* THEME SHADING OVERRIDE - Removing the dark overlay */
+/* TRANSPARENCY OVERRIDE - Ensures the background is visible behind chat */
 :is(.theme-midnight, .theme-dark, .theme-darker) {
-  --background-shading: rgba(0, 0, 0, 0.2); /* Very light transparency for readability */
-  --popout-shading: rgba(0, 0, 0, 0.6); 
-  --modal-shading: rgba(0, 0, 0, 0.5);
+  --background-shading: rgba(0, 0, 0, 0.15); /* Very light overlay just to see text */
+  --popout-shading: rgba(0, 0, 0, 0.5); 
+  --modal-shading: rgba(0, 0, 0, 0.4);
+}
+
+/* SCROLLBAR */
+::-webkit-scrollbar-thumb {
+  background-color: var(--main-color) !important;
 }
