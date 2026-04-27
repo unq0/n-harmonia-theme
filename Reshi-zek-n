@@ -1,0 +1,69 @@
+/**
+ * @name ClearVision V7 - N: Truth and Ideals
+ * @author ClearVision Team / Edited by Gemini
+ * @version 7.0.1
+ * @description A dual-tone theme based on N with Reshiram and Zekrom.
+ */
+
+/* IMPORT CSS */
+@import url("https://clearvision.github.io/ClearVision-v7/main.css");
+@import url("https://clearvision.github.io/ClearVision-v7/vencord.css");
+
+/* SETTINGS */
+:root {
+  /* ACCENT COLORS - Sampled from Zekrom's scales and Reshiram's flames */
+  --main-color: #7d5bbe; /* Deep Dragon Violet */
+  --hover-color: #ff9a62; /* Sunset Cloud Orange */
+  --success-color: #43b581; 
+  --danger-color: #982929; 
+  
+  /* STATUS COLORS */
+  --online-color: #89f5ff; /* Reshiram Cyan */
+  --idle-color: #faa61a; 
+  --dnd-color: #982929; 
+  --streaming-color: #593695; 
+  --offline-color: #808080; 
+
+  /* APP BACKGROUND */
+  --background-shading-percent: 80%; 
+  /* Using the provided wide wallpaper link */
+  --background-image: url(https://i.redd.it/fzflmca1011f1.jpg); 
+  --background-position: center; 
+  --background-size: cover; 
+  --background-attachment: fixed; 
+  --background-filter: contrast(1.1) brightness(0.9); 
+  
+  /* USER POPOUT BACKGROUND */
+  --user-popout-image: var(--background-image); 
+  --user-popout-position: 20% center; /* Focuses more on the Zekrom side for popouts */
+  --user-popout-filter: brightness(0.7); 
+  
+  /* USER MODAL BACKGROUND */
+  --user-modal-image: var(--background-image); 
+  --user-modal-position: center; 
+  --user-modal-filter: brightness(0.6); 
+  
+  /* HOME ICON */
+  --home-icon: url(https://clearvision.github.io/icons/discord.svg); 
+  --home-size: cover; 
+  
+  /* FONTS - Using a clean, heroic sans-serif */
+  --main-font: "Inter", "Readex Pro", "gg sans", sans-serif; 
+  --code-font: "JetBrains Mono", monospace; 
+  
+  /* CHANNEL COLORS */
+  --channel-selected-bg: var(--main-color); 
+  --channel-unread: var(--hover-color); 
+}
+
+/* ONYX THEME SHADING - Best for this dark-to-light transition image */
+:is(.theme-midnight, .theme-light .theme-midnight) {
+  --background-shading: rgba(20, 20, 35, 0.75); 
+  --card-shading: rgba(0, 0, 0, 0.4); 
+  --popout-shading: rgba(15, 15, 25, 0.9); 
+  --normal-text: #f0f0f5; 
+  --muted-text: #94949c; 
+}
+
+/* ADD ADDITIONAL CSS BELOW HERE */
+/* Custom scroll
