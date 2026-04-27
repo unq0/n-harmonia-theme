@@ -1,0 +1,65 @@
+/**
+ * @name ClearVision V7 - Natural Harmonia Gropius
+ * @author ClearVision Team / Edited by Gemini
+ * @version 7.0.1
+ * @description A cool, aesthetic theme centered around N from Pokemon.
+ */
+
+/* IMPORT CSS */
+@import url("https://clearvision.github.io/ClearVision-v7/main.css");
+@import url("https://clearvision.github.io/ClearVision-v7/vencord.css");
+
+/* SETTINGS */
+:root {
+  /* ACCENT COLORS - N's Signature Mint & Forest Green */
+  --main-color: #99ffaa; /* Bright Mint Glow */
+  --hover-color: #76d683; /* Deeper Soft Green */
+  --success-color: #43b581; 
+  --danger-color: #ff5c5c; 
+  
+  /* STATUS COLORS */
+  --online-color: #99ffaa; 
+  --idle-color: #f1c40f; 
+  --dnd-color: #e74c3c; 
+
+  /* APP BACKGROUND */
+  /* High Resolution N Wallpaper */
+  --background-image: url(); 
+  --background-position: center;
+  --background-size: cover;
+  --background-attachment: fixed;
+  --background-shading-percent: 80%; 
+  --background-filter: contrast(1.05) saturate(1.1) brightness(0.85); 
+  
+  /* FONTS - Geometric & Clean */
+  --main-font: "Montserrat", "Lexend", "Segoe UI", sans-serif;
+  --code-font: "JetBrains Mono", "Fira Code", monospace;
+
+  /* USER POPOUT & MODAL */
+  --user-popout-image: var(--background-image);
+  --user-popout-filter: brightness(0.7) saturate(1.2);
+  --user-modal-image: var(--background-image);
+  --user-modal-filter: brightness(0.6);
+  
+  /* HOME BUTTON CUSTOMIZATION */
+  --home-icon: url(https://i.imgur.com/vH9Z6YF.png); /* Optional: Use a Pokeball or N's Cube if you have a link */
+  
+  /* CHANNEL COLORS */
+  --channel-unread: var(--main-color);
+  --channel-selected-bg: var(--main-color);
+}
+
+/* ASH THEME SETTINGS - For a soft, dark forest vibe */
+:is(.theme-dark, .theme-light .theme-dark) {
+  --background-shading: rgba(10, 15, 12, 0.75); /* Dark forest tint */
+  --popout-shading: rgba(0, 0, 0, 0.8);
+  --normal-text: #e8f5e9; /* Off-white with a hint of green */
+  --muted-text: #9eb0a0;
+}
+
+/* ADD ADDITIONAL CSS BELOW HERE */
+/* This makes the scrollbar match N's color scheme */
+::-webkit-scrollbar-thumb {
+  background-color: var(--main-color) !important;
+  border-radius: 10px;
+}
