@@ -1,0 +1,83 @@
+/**
+ * @name ClearVision V7 - Refined Rainbow
+ * @author ClearVision Team & Gemini
+ * @version 7.0.6
+ * @description Comfortaa font, sparkle cursor fix, and selective rainbow accents.
+ */
+
+/* IMPORT CSS */
+@import url("https://clearvision.github.io/ClearVision-v7/main.css");
+@import url("https://clearvision.github.io/ClearVision-v7/vencord.css");
+/* Import Comfortaa */
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&display=swap');
+
+/* SETTINGS */
+:root {
+  --main-color: #00f2ff; 
+  --hover-color: #ffffff;
+  
+  /* BACKGROUND */
+  --background-image: url(https://i.postimg.cc/4NtPxmt1/N-s-Zekrom-Pokemon-Gallery-Collection.webp); 
+  --background-shading-percent: 85%; 
+  
+  /* FONT */
+  --main-font: "Comfortaa", cursive;
+  --code-font: monospace;
+}
+
+/* --- RAINBOW ANIMATION --- */
+@keyframes rainbowShift {
+  0% { filter: hue-rotate(0deg); }
+  100% { filter: hue-rotate(360deg); }
+}
+
+/* --- SELECTIVE RAINBOW GLOW --- */
+
+/* 1. Rainbow Unread Mentions/Badges */
+.unread_d1405b, 
+.mention_b441f0,
+.item_c4cd66 {
+    background-color: var(--main-color) !important;
+    animation: rainbowShift 4s linear infinite;
+    box-shadow: 0 0 12px var(--main-color);
+}
+
+/* 2. Rainbow Selected Channel Background */
+.selected_f7ebc3 .layout_e9e48a {
+    background: rgba(0, 242, 255, 0.2) !important;
+    animation: rainbowShift 6s linear infinite;
+    border-left: 3px solid var(--main-color);
+}
+
+/* 3. Rainbow Popout Borders */
+.userPopoutOuter_c69a7b, .inner_c69a7b {
+    border: 2px solid var(--main-color) !important;
+    animation: rainbowShift 8s linear infinite;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5) !important;
+}
+
+/* --- FIXED SPARKLE CURSOR --- */
+/* This uses a direct .cur file for better compatibility */
+* {
+    cursor: url('https://cur.cursors-4u.net/symbols/sym-1/sym49.cur'), auto !important;
+}
+
+/* --- ADDITIONAL UI TWEAKS --- */
+
+/* Text Glow (Static Blue to keep it readable) */
+.name_d8bfb3, .title_a7d737 {
+    text-shadow: 0 0 5px var(--main-color);
+}
+
+/* Button Hover Sparkle/Glow */
+.button_dd4f85:hover {
+    filter: drop-shadow(0 0 8px var(--main-color));
+    transform: translateY(-1px);
+    transition: 0.2s;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar-thumb {
+    background-color: var(--main-color) !important;
+    border-radius: 10px;
+}
